@@ -2,10 +2,10 @@ var n = document.querySelectorAll(".drum").length;
 
 for(var i=0; i<n; i++)
 {
-    document.querySelectorAll(".drum")[i].addEventListener("click", function()
+    document.querySelectorAll(".drum")[i].addEventListener("keydown", function(e)
     {
-        console.log(this);// .style.color="white";
-        var x = this.innerHTML;
+        console.log(e);// .style.color="white";
+        var x = e.key;
         console.log(x);
         switch(x)
         {
