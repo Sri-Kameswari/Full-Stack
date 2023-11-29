@@ -4,17 +4,17 @@ var userPattern = [];
 var level = 0;
 var started = false;
 
-$(document).keypressed(function(e){
+$(document).keypress(function(e){
     if(!started)
     {
         $("#level-title").text("Level "+level);
         nextSeq();
         started = true;
     }
-})
+});
 
 $(".btn").click(function(){
-    var userCol = $this.attr("id");
+    var userCol = $(this).attr("id");
     userPattern.push(userCol);
     playSound(userCol);
     animatePress(userCol);
@@ -33,9 +33,8 @@ function nextSeq()
 
 function playSound(randCol)
 {
-    $("sounds/"+randCol+".mp3").play();
-    //var audio = new Audio("sounds/" + randomChosenColour + ".mp3"); 
-    //audio.play();
+    var audio = new Audio("sounds/" + randCol + ".mp3"); 
+    audio.play();
 }
 
 function animatePress(curCol)
