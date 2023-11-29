@@ -6,6 +6,8 @@ var userPattern = [];
 $(".btn").click(function(){
     var userCol = $this.attr("id");
     userPattern.push(userCol);
+    playSound(userCol);
+    animatePress(userCol);
 });
 
 function nextSeq()
@@ -19,10 +21,17 @@ function nextSeq()
 
 function playSound(randCol)
 {
-    
     $("sounds/"+randCol+".mp3").play();
     //var audio = new Audio("sounds/" + randomChosenColour + ".mp3"); 
     //audio.play();
+}
+
+function animatePress(curCol)
+{
+    $("#"+curCol).addClass("pressed");
+    setTimeout(function(){
+        $("#"+curCol).removeClass("pressed");
+    }, 100);
 }
 
 
