@@ -1,5 +1,12 @@
 var buttonCol = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
+var userPattern = [];
+
+
+$(".btn").click(function(){
+    var userCol = $this.attr("id");
+    userPattern.push(userCol);
+});
 
 function nextSeq()
 {
@@ -9,7 +16,9 @@ function nextSeq()
 
     $("#"+randCol).fadeOut(100).fadeIn(100);
     $("sounds/"+randCol+".mp3").play();
-    //var audio = new Audio("sounds/" + randomChosenColour + ".mp3"); audio.play();
+    //var audio = new Audio("sounds/" + randomChosenColour + ".mp3"); 
+    //audio.play();
+
 }
 
 
