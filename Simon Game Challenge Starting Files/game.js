@@ -4,7 +4,7 @@ var userPattern = [];
 var level = 0;
 var started = false;
 
-$(document).keypress(function(e){
+$(document).keypress(function(){
     if(!started)
     {
         $("#level-title").text("Level "+level);
