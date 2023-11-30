@@ -62,6 +62,16 @@ function check(curLevel)
     else
     {
         console.log("wrong");
+        // var audio = new Audio("sounds/wrong.mp3");
+        // audio.play();
+        playSound("wrong");
+
+        $("body").addClass(".game-over");
+        setTimeout(function(){
+            $("body").removeClass(".game-over");
+        }, 200);
+
+        $("#level-title").text("Game Over, Press Any Key to Restart");
     }
 }
 
