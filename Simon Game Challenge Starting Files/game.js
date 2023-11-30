@@ -18,10 +18,12 @@ $(".btn").click(function(){
     userPattern.push(userCol);
     playSound(userCol);
     animatePress(userCol);
+    check(userPattern.length-1);
 });
 
 function nextSeq()
 {
+    userPattern.length = 0;
     level++;
     $("#level-title").text("Level "+level);
     var randNum = Math.floor(Math.random()*4); 
@@ -43,6 +45,24 @@ function animatePress(curCol)
     setTimeout(function(){
         $("#"+curCol).removeClass("pressed");
     }, 100);
+}
+
+function check(curLevel)
+{
+    if(userPattern[curLevel]===gamePattern[curLevel])
+    {
+        console.log("success");
+        if(userPattern.length === gamePattern.length)
+        {
+            setTimeout(function(){
+                nextSeq();
+            }, 1000);
+        }
+    }
+    else
+    {
+        console.log("wrong");
+    }
 }
 
 
