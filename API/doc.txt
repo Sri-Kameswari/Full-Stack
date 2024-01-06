@@ -1,0 +1,5 @@
+API Authentication
+1) No Authentication: Open for all. Generally, has a rate limiter (no. of times an IP address can access in a given time frame).
+2) Basic Authentication: Username and password. Base 64 encoding.
+3) API Key Authorisation: 
+4) 

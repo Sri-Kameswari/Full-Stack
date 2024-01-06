@@ -1,6 +1,7 @@
 import get from 'axios';
 
-const apiUrl = 'https://bored-api.appbrewery.com/random';
+//Mutliple query paarmeters by modifying the URL
+const apiUrl = 'https://bored-api.appbrewery.com/random?type=education';
 
 async function getActivity() {
   try {
@@ -10,7 +11,7 @@ async function getActivity() {
     console.log(`Activity: ${activity}`);
     console.log(`Type: ${type}`);
   } catch (error) {
-    console.error('Error fetching :', error.message);
+    console.error('Error fetching data:', error.message);
   }
 }
 
